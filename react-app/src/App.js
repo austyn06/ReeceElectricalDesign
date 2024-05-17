@@ -1,11 +1,34 @@
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import { Element } from "react-scroll";
+import Navbar from "./Navbar";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
+import Footer from "./Footer";
 
-function App() {
+export default function App() {
   return (
-    <div className='text-center'>
-      <h1>Reece Electrical Design</h1>
-    </div>
+    <>
+      <Router>
+        <Navbar />
+        <div>
+          <Element name="home">
+            <Home />
+          </Element>
+          <Element name="about-me">
+            <About />
+          </Element>
+          <Element name="projects">
+            <Projects />
+          </Element>
+          <Element name="contact">
+            <Contact />
+          </Element>
+          <Footer />
+        </div>
+      </Router>
+    </>
   );
 }
-
-export default App;

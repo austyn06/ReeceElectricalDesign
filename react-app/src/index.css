@@ -3,3 +3,53 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* #1B1B1B <-- Dark image color */
+
+.contact-info {
+  background-color: #f8f9fa;
+  color: #333;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar {
+  background-color: #fff;
+  box-shadow: 0 4px 2px -2px #cc0000;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+
+.navbar-center {
+  flex-grow: 1;
+}
+
+.nav-link {
+  color: #000;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 0 1rem;
+  transition: all 0.4s ease-in-out;
+  cursor: pointer;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  color: #cc0000;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.logo-img {
+  max-height: 40px;
+  width: auto;
+}
+
+.footer {
+  background-color: #f8f9fa;
+  color: #333;
+  font-size: 1rem;
+  padding: 2rem 0;
+}
