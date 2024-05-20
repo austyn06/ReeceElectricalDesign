@@ -4,20 +4,23 @@
   box-sizing: border-box;
 }
 
-.contact-info {
-  background-color: #f8f9fa;
-  color: #333;
-  font-size: 1rem;
-  transition: all 0.3s ease-in-out;
-}
-
 .navbar {
   background-color: #fff;
   box-shadow: 0 4px 2px -2px #cc0000;
   position: sticky;
   top: 0;
   z-index: 1000;
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar.hidden {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+.navbar.visible {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 .navbar-center {
@@ -45,77 +48,9 @@
   width: auto;
 }
 
-.contact-form-container {
-  background-color: white;
-  border-radius: 15px;
-  border: 1px solid #ced4da;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  max-width: 500px;
-  width: 100%;
-}
-
-.dashed-hr {
-  border: none;
-  background-color: #000;
-  border-top: 2px dashed #fff;
-  margin: 20px 0;
-}
-
-.form-control {
-  border: 1px solid #ced4da;
-}
-
-.form-control:focus {
-  border-color: #000;
-  outline: 0;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
-
-.form-control.error {
-  border-color: red;
-  box-shadow: 0 0 5px rgba(255, 0, 0, 0.5);
-}
-
-.error-text {
-  color: red;
-  font-size: 0.875rem;
-  margin-top: 0.25rem;
-  background-color: #fff5f5;
-  border: 1px solid red;
-  padding: 5px;
-  border-radius: 5px;
-  margin-bottom: 0.5rem;
-}
-
-.btn-dark {
-  background-color: black;
-  color: white;
-  border: none;
-}
-
-.btn-dark:hover {
-  background-color: #333;
-}
-
 .footer {
   background-color: #f8f9fa;
   color: #333;
   font-size: 1rem;
   padding: 2rem 0;
 }
-
-.position-relative {
-  position: relative;
-}
-
-.custom-select {
-  appearance: none;
-  padding-right: 30px;
-  background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-down" viewBox="0 0 16 16"> <path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"/> </svg>') no-repeat right 10px center;
-  background-color: white;
-  background-size: 16px 16px;
-}
-
-/* .custom-select option[value="Select an option"] {
-  color: #6c757d;
-} */
