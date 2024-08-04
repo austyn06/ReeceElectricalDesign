@@ -13,7 +13,7 @@
   transition: transform 0.3s ease-in-out;
 }
 
-.navbar.hidden {
+/* .navbar.hidden {
   transform: translateY(-100%);
   opacity: 0;
 }
@@ -21,7 +21,7 @@
 .navbar.visible {
   transform: translateY(0);
   opacity: 1;
-}
+} */
 
 .navbar-center {
   flex-grow: 1;

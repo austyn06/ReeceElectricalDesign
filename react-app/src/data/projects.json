@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "title": "Project 1",
+        "description": "This is a project description",
+        "images": [],
+        "company": "Company 1",
+        "buildingImage": "/images/placeholder.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Project 2",
+        "description": "This is a project description",
+        "images": [],
+        "company": "Company 2",
+        "buildingImage": "/images/placeholder.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Project 3",
+        "description": "This is a project description",
+        "images": [],
+        "company": "Company 3",
+        "buildingImage": "/images/placeholder.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Project 4",
+        "description": "This is a project description",
+        "images": [],
+        "company": "Company 4",
+        "buildingImage": "/images/placeholder.jpg"
+    },
+    {
+        "id": 5,
+        "title": "Project 5",
+        "description": "This is a project description",
+        "images": [],
+        "company": "Company 5",
+        "buildingImage": "/images/placeholder.jpg"
+    },
+    {
+        "id": 6,
+        "title": "Project 6",
+        "description": "This is a project description",
+        "images": [],
+        "company": "Company 6",
+        "buildingImage": "/images/placeholder.jpg"
+    },
+    {
+        "id": 7,
+        "title": "Project 7",
+        "description": "This is a project description",
+        "images": [],
+        "company": "Company 7",
+        "buildingImage": "/images/placeholder.jpg"
+    },
+    {
+        "id": 8,
+        "title": "Project 8",
+        "description": "This is a project description",
+        "images": [],
+        "company": "Company 8",
+        "buildingImage": "/images/placeholder.jpg"
+    }
+]

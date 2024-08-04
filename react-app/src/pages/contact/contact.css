@@ -1,7 +1,9 @@
 /* Contact Title */
 .contact-title {
-    background: url('./images/contact-background.webp') no-repeat center center;
+    background: url('../../images/contact-title-background.webp');
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 80px;
     position: relative;
 }
@@ -29,7 +31,6 @@
 .contact-info-container {
     max-width: 500px;
     width: 100%;
-    background-color: white;
 }
 
 .contact-info-details {

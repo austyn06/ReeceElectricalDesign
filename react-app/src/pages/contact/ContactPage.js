@@ -1,66 +1,30 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
-import "../contact.css";
+import { handleChange, validateForm } from "./contactHandlers";
+import "./contact.css";
 
-export default function Contact() {
+export default function ContactPage() {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
     phone: "",
-    message: "",
+    message: ""
   });
   const [errors, setErrors] = useState({});
 
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    if (id === "phone") {
-      const formattedPhoneNumber = formatPhoneNumber(value);
-      setFormData({ ...formData, [id]: formattedPhoneNumber });
-    } else {
-      setFormData({ ...formData, [id]: value });
-    }
-  };
-
-  const formatPhoneNumber = (value) => {
-    if (!value) return value;
-    const phoneNumber = value.replace(/[^\d]/g, '');
-    const phoneNumberLength = phoneNumber.length;
-
-    if (phoneNumberLength < 4) return phoneNumber;
-    if (phoneNumberLength < 7) {
-      return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
-    }
-    return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3, 6)}-${phoneNumber.slice(6, 10)}`;
-  };
-
-  const validateForm = () => {
-    const newErrors = {};
-    if (!formData.firstName) newErrors.firstName = "This field is required";
-    if (!formData.lastName) newErrors.lastName = "This field is required";
-    if (!formData.email) {
-      newErrors.email = "This field is required";
-    } else if (!formData.email.includes('@')) {
-      newErrors.email = "Email must contain '@' symbol";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Invalid email format. Expected format: example@yourdomain.com";
-    }
-    if (!formData.phone) {
-      newErrors.phone = "This field is required";
-    } else if (!/^\(\d{3}\) \d{3}-\d{4}$/.test(formData.phone)) {
-      newErrors.phone = "Invalid phone number format. Expected format: (123) 456-7890";
-    }
-    if (!formData.message) newErrors.message = "This field is required";
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (validateForm()) {
+    if (validateForm(formData, setErrors)) {
       console.log("Form submitted:", formData);
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        message: ""
+      });
     }
   };
 
@@ -102,7 +66,7 @@ export default function Contact() {
                     id="firstName"
                     placeholder="First Name"
                     value={formData.firstName}
-                    onChange={handleChange}
+                    onChange={(e) => handleChange(e, formData, setFormData)}
                     style={{ fontSize: "1.2rem", padding: "0.5rem" }}
                   />
                   <div className="error-text">{errors.firstName}</div>
@@ -114,7 +78,7 @@ export default function Contact() {
                     id="lastName"
                     placeholder="Last Name"
                     value={formData.lastName}
-                    onChange={handleChange}
+                    onChange={(e) => handleChange(e, formData, setFormData)}
                     style={{ fontSize: "1.2rem", padding: "0.5rem" }}
                   />
                   <div className="error-text">{errors.lastName}</div>
@@ -131,7 +95,7 @@ export default function Contact() {
                 id="email"
                 placeholder="example@yourdomain.com"
                 value={formData.email}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e, formData, setFormData)}
                 style={{ fontSize: "1.2rem", padding: "0.5rem" }}
               />
               <div className="error-text">{errors.email}</div>
@@ -147,7 +111,7 @@ export default function Contact() {
                 placeholder="(123) 456-7890"
                 pattern="^(\(\d{3}\) |\d{3}[.-]?|\d{3} )?\d{3}[.-]?\d{4}$"
                 value={formData.phone}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e, formData, setFormData)}
                 style={{ fontSize: "1.2rem", padding: "0.5rem" }}
               />
               <div className="error-text">{errors.phone}</div>
@@ -162,7 +126,7 @@ export default function Contact() {
                 rows="3"
                 placeholder="Your message"
                 value={formData.message}
-                onChange={handleChange}
+                onChange={(e) => handleChange(e, formData, setFormData)}
                 style={{ fontSize: "1.2rem", padding: "0.5rem", resize: "none" }}
               ></textarea>
               <div className="error-text">{errors.message}</div>

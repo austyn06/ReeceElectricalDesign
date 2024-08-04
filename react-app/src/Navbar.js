@@ -1,35 +1,34 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Link } from "react-scroll";
-import logo from "./images/reece_logo_light.png";
 
 export default function Navbar() {
-  const [showNavbar, setShowNavbar] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  // const [showNavbar, setShowNavbar] = useState(true);
+  // const [lastScrollY, setLastScrollY] = useState(0);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
-        // Scrolling down
-        setShowNavbar(false);
-      } else {
-        // Scrolling up
-        setShowNavbar(true);
-      }
-      setLastScrollY(window.scrollY);
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (window.scrollY > lastScrollY) {
+  //       // Scrolling down
+  //       setShowNavbar(false);
+  //     } else {
+  //       // Scrolling up
+  //       setShowNavbar(true);
+  //     }
+  //     setLastScrollY(window.scrollY);
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
+  //   window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [lastScrollY]);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [lastScrollY]);
 
   return (
-    <nav className={`navbar navbar-expand-lg ${showNavbar ? "visible" : "hidden"}`}>
+    <nav className={"navbar navbar-expand-lg"}>
       <div className="container-fluid">
         <img
-          src={logo}
+          src="/images/reece-logo-light.png"
           alt="Reece Electrical Design Logo"
           className="logo-img ms-3"
         />
@@ -62,7 +61,6 @@ export default function Navbar() {
                 className="nav-link"
                 to="projects"
                 spy={true}
-                offset={-70}
                 activeClass="active"
               >
                 Projects
@@ -73,7 +71,6 @@ export default function Navbar() {
                 className="nav-link"
                 to="contact"
                 spy={true}
-                offset={-70}
                 activeClass="active"
               >
                 Contact Us
